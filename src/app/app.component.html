@@ -73,6 +73,26 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="mb-1 row">
+                            <div class="col-2">
+                                <i class="fa fa-github"></i>
+                            </div>
+                            <div class="col-10 pl-0">
+                                <a [href]="github" class="t0-section-content">
+                                    {{ github }}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-1 row">
+                            <div class="col-2">
+                                <i class="fa fa-globe"></i>
+                            </div>
+                            <div class="col-10 pl-0">
+                                <a [href]="website" class="t0-section-content">
+                                    {{ website }}
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-12 px-0 t0-section t0-education mt-5">
                         <div class="mt-1 mb-1">
@@ -211,6 +231,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="font-italic" *ngIf="postScript">
+               PS: {{postScript}}
             </div>
             <div class="t0-end">
             </div>

@@ -63,6 +63,9 @@ export class AppComponent {
   addressLine1 = "241, Talkatora Road, Alambagh";
   addressLine2 = "Lucknow 226005.";
   linkedin = "https://in.linkedin.com/in/mohammadanaskhan";
+  github = "https://github.com/Anas9598";
+  website = "https://anas9598.github.io/portfolio";
+  postScript = `This resume is created using HTML/CSS and deployed as an Angular app on GitHub Pages. Visit ${this.website} to view this page.`
 
 
   courses: IEducation[] = [
