@@ -1,0 +1,219 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="container my-3 py-4 t0-container">
+            <div class="row">
+                <div class="col-10 pr-0">
+                    <div class="t0-header">
+                        <div>
+                            <label class="t0-header-name">
+                                <strong>{{ firstName | uppercase }}</strong>
+                                {{ lastName | uppercase }}
+                            </label>
+                        </div>
+                        <div>
+                            <label class="t0-header-title">
+                                {{ jobTitle + " | " + currentCompany }}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 pl-0">
+                    <div class="t0-header-certificate-1 border-bottom-0">
+                        <img src="../assets/images/MS_Cert_Professional_logo_Blk_rgb.png">
+                    </div>
+                    <div class="t0-header-certificate-2 border-top-0">
+                        <img src="../assets/images/Angular_full_color_logo.svg">
+                        <!-- <img src="../assets/images/NET_Core_Logo.svg.png"> -->
+                    </div>
+                </div>
+                <div class="t0-section-left p-3 ml-3">
+                    <div class="col-12 px-0 t0-section t0-contact mt-3">
+                        <div class="mb-2">
+                            <label class="t0-section-header">
+                                CONTACT
+                            </label>
+                        </div>
+                        <div class="mb-1 row ">
+                            <div class="col-2">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="col-10 pl-0">
+                                <a href="tel:{{phoneNumber}}" class="t0-section-content">
+                                    {{ phoneNumber }}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-1 row">
+                            <div class="col-2">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div class="col-10 pl-0">
+                                <a href="mailto:{{email}}" class="t0-section-content">
+                                    {{ email }}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mb-1 row">
+                            <div class="col-2">
+                                <i class="fa fa-map-marker"></i>
+                            </div>
+                            <div class="col-10 pl-0">
+                                <label class="t0-section-content">
+                                    {{ address }}
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-1 row">
+                            <div class="col-2">
+                                <i class="fa fa-linkedin-square"></i>
+                            </div>
+                            <div class="col-10 pl-0">
+                                <a [href]="linkedin" class="t0-section-content">
+                                    {{ linkedin }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 px-0 t0-section t0-education mt-5">
+                        <div class="mt-1 mb-1">
+                            <label class="t0-section-header">
+                                EDUCATION
+                            </label>
+                        </div>
+                        <div class="mt-1 row" *ngFor="let course of courses">
+                            <div class="col-12">
+                                <label class="mb-0 t0-section-content">
+                                    <strong>{{ course.name }}</strong>
+                                    {{ "(" + course.major_board + ")" }}
+                                </label>
+                                <label class="mb-0 float-right t0-section-content">
+                                    {{ getCourseDuration(course) }}
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <label class="t0-section-content">
+                                    {{ course.collegeName }}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 px-0 t0-section t0-skills mt-5">
+                        <div class="mt-1 mb-1">
+                            <label class="t0-section-header">
+                                SKILLS
+                            </label>
+                        </div>
+                        <div class="mt-1 row" *ngFor="let skill of skills">
+                            <div class="col-12">
+                                <label class="mb-0 t0-section-content">
+                                    <strong>{{ skill.name }}</strong>
+                                </label>
+                            </div>
+                            <div class="col-12">
+                                <p>
+                                    <ngb-progressbar class="t0-progress-bar" [value]="skill.percent" height=".5rem">
+                                    </ngb-progressbar>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 px-0 t0-section t0-certification mt-5">
+                        <div class="mt-1 mb-1">
+                            <label class="t0-section-header">
+                                ACHIEVEMENTS
+                            </label>
+                        </div>
+                        <ul class="mt-1 row" *ngFor="let achievement of achievements">
+                            <li class="col-12 px-0 t0-section-content">
+                                <i class="fa fa-caret-right"></i>
+                                <label class="mb-0 d-inline">
+                                    <strong>{{ achievement }}</strong>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 px-0 t0-section t0-hobbies mt-5">
+                        <div class="mt-1 mb-1">
+                            <label class="t0-section-header">
+                                INTERESTS / HOBBIES
+                            </label>
+                        </div>
+                        <div class="mt-1 row t0-section-content">
+                            <span class="border px-3 py-1 mx-2 my-1 t0-hobby form-control-sm"
+                                *ngFor="let hobby of hobbies">
+                                {{ hobby }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="t0-section-right col pt-3 pr-3">
+                    <div class="col-12 px-0 t0-section t0-profile mt-3">
+                        <div class="mb-2">
+                            <label class="t0-section-header">
+                                SUMMARY
+                            </label>
+                        </div>
+                        <div class="mb-1 row">
+                            <div class="col-12">
+                                <div class="t0-section-content pl-3">
+                                    {{ profileSummary }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 px-0 t0-section t0-experience mt-5">
+                        <div class="mb-2">
+                            <label class="t0-section-header">
+                                PROFESSIONAL EXPERIENCE
+                            </label>
+                        </div>
+                        <div class="mb-1" *ngFor="let experience of experiences">
+                            <div class="t0-experience-header row mx-2">
+                                <div class="col-12 py-2">
+                                    <label class="t0-section-content t0-experience-company">
+                                        {{ experience.companyName }}
+                                        {{ " | " + getCompanyAddress(experience) }}
+                                    </label>
+                                </div>
+                                <div class="col-6 py-2">
+                                    <label class="t0-section-content t0-experience-jobtitle">
+                                        {{ experience.jobTitle }}
+                                    </label>
+                                </div>
+                                <div class="col-6 py-2">
+                                    <label class="t0-section-content t0-experience-duration text-right">
+                                        {{ getExperienceDuration(experience) }}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="t0-experience-section ml-3 pt-3">
+                                <div class="col-12">
+                                    <label class="t0-section-content">
+                                        {{ experience.description }}
+                                    </label>
+                                </div>
+                                <div class="col-12">
+                                    <ul class="t0-section-content">
+                                        <li *ngFor="let project of experience.projects" class="t0-experience-project">
+                                            <label>{{ project.name }}</label>
+                                            <p>{{ project.detail }}</p>
+                                            <label>Roles</label>
+                                            <ul>
+                                                <li *ngFor="let role of project.roles">
+                                                    <i class="fa fa-caret-right"></i>
+                                                    {{ role }}
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="t0-end">
+            </div>
+        </div>
+    </div>
+</div>

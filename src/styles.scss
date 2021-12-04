@@ -1,0 +1,132 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* FONT Roboto Start */
+@font-face {
+    font-family: "Roboto-Black";
+    src: local("Roboto-Black"), url(./assets/fonts/Roboto/Roboto-Black.ttf) format("truetype");
+}
+@font-face {
+    font-family: "Roboto-BlackItalic";
+    src: local("Roboto-BlackItalic"), url(./assets/fonts/Roboto/Roboto-BlackItalic.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-Bold";
+    src: local("Roboto-Bold"), url(./assets/fonts/Roboto/Roboto-Bold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-BoldItalic";
+    src: local("Roboto-BoldItalic"), url(./assets/fonts/Roboto/Roboto-BoldItalic.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-Light";
+    src: local("Roboto-Light"), url(./assets/fonts/Roboto/Roboto-Light.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-LightItalic";
+    src: local("Roboto-LightItalic"), url(./assets/fonts/Roboto/Roboto-LightItalic.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-Medium";
+    src: local("Roboto-Medium"), url(./assets/fonts/Roboto/Roboto-Medium.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-MediumItalic";
+    src: local("Roboto-MediumItalic"), url(./assets/fonts/Roboto/Roboto-MediumItalic.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-Regular";
+    src: local("Roboto-Regular"), url(./assets/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-Thin";
+    src: local("Roboto-Thin"), url(./assets/fonts/Roboto/Roboto-Thin.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto-ThinItalic";
+    src: local("Roboto-ThinItalic"), url(./assets/fonts/Roboto/Roboto-ThinItalic.ttf) format("truetype");
+}
+/* FONT Roboto End */
+
+/* FONT Roboto_Mono Start */
+@font-face {
+    font-family: "RobotoMono";
+    src: local("RobotoMono"), url(./assets/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "RobotoMonoItalic";
+    src: local("RobotoMonoItalic"), url(./assets/fonts/Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf) format("truetype");
+}
+/* FONT Roboto_Mono End */
+
+/* FONT Arimo Start */
+@font-face {
+    font-family: "Arimo";
+    src: local("Arimo"), url(./assets/fonts/Arimo/Arimo-VariableFont_wght.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "ArimoItalic";
+    src: local("ArimoItalic"), url(./assets/fonts/Arimo/Arimo-Italic-VariableFont_wght.ttf) format("truetype");
+}
+/* FONT Arimo End */
+
+/* FONT EBGaramond Start */
+@font-face {
+    font-family: "EBGaramond-Regular";
+    src: local("EBGaramond-Regular"), url(./assets/fonts/EBGaramond/static/EBGaramond-Regular.ttf) format("truetype");
+}
+/* FONT EBGaramond End */
+
+
+/* FONT Proza Libre Start */
+@font-face {
+    font-family: "ProzaLibre-Bold";
+    src: local("ProzaLibre-Bold"), url(./assets/fonts/Proza_Libre/ProzaLibre-Bold.ttf) format("truetype");
+}
+@font-face {
+    font-family: "ProzaLibre-BoldItalic";
+    src: local("ProzaLibre-BoldItalic"), url(./assets/fonts/Proza_Libre/ProzaLibre-BoldItalic.ttf) format("truetype");
+}
+@font-face {
+    font-family: "ProzaLibre-ExtraBold";
+    src: local("ProzaLibre-ExtraBold"), url(./assets/fonts/Proza_Libre/ProzaLibre-ExtraBold.ttf) format("truetype");
+}
+@font-face {
+    font-family: "ProzaLibre-ExtraBoldItalic";
+    src: local("ProzaLibre-ExtraBoldItalic"), url(./assets/fonts/Proza_Libre/ProzaLibre-ExtraBoldItalic.ttf) format("truetype");
+}
+@font-face {
+    font-family: "ProzaLibre-Italic";
+    src: local("ProzaLibre-Italic"), url(./assets/fonts/Proza_Libre/ProzaLibre-Italic.ttf) format("truetype");
+}
+@font-face {
+    font-family: "ProzaLibre-Medium";
+    src: local("ProzaLibre-Medium"), url(./assets/fonts/Proza_Libre/ProzaLibre-Medium.ttf) format("truetype");
+}
+@font-face {
+    font-family: "ProzaLibre-MediumItalic";
+    src: local("ProzaLibre-MediumItalic"), url(./assets/fonts/Proza_Libre/ProzaLibre-MediumItalic.ttf) format("truetype");
+}
+@font-face {
+    font-family: "ProzaLibre-Regular";
+    src: local("ProzaLibre-Regular"), url(./assets/fonts/Proza_Libre/ProzaLibre-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: "ProzaLibre-SemiBold";
+    src: local("ProzaLibre-SemiBold"), url(./assets/fonts/Proza_Libre/ProzaLibre-SemiBold.ttf) format("truetype");
+}
+@font-face {
+    font-family: "ProzaLibre-SemiBoldItalic";
+    src: local("ProzaLibre-SemiBoldItalic"), url(./assets/fonts/Proza_Libre/ProzaLibre-SemiBoldItalic.ttf) format("truetype");
+}
+/* FONT Proza Libre Start */
