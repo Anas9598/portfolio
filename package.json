@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:prod": "ng build --aot --prod --base-href ./",
-    "build:githubpages": "ng build --output-path ./docs --prod ",
+    "build:githubpages": "ng build --output-path ./docs --aot --prod --base-href ./",
     "postinstall": "ngcc"
   },
   "private": true,
