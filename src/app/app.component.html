@@ -129,7 +129,7 @@
                                 </label>
                             </div>
                             <div class="col-12 mb-2">
-                                <ngb-progressbar class="t0-progress-bar bg-warning" [value]="skill.percent" height=".5rem">
+                                <ngb-progressbar class="t0-progress-bar" [value]="skill.percent" height=".5rem">
                                 </ngb-progressbar>
                             </div>
                         </div>
@@ -231,9 +231,9 @@
             </div>
             <div class="t0-end">
             </div>
-            <div *ngIf="isMyResume" class="app-print-only bg-dark mt-2 mx-3 px-3 text-monospace text-sm-center text-white">
-                &lt;PS: Created this resume using HTML/CSS and deployed as an Angular app on GitHub Pages. Visit my
-                github page: <a [href]="website">{{ website }}</a> to view. /&gt;
+            <div *ngIf="isMyResume" class="app-my-postscript app-print-only bg-dark mt-2 mx-3 px-3 text-monospace text-sm-center text-white">
+                &lt;PS: This resume is created using HTML & CSS and deployed as an Angular app on GitHub Pages. Please visit my
+                github page: <a [href]="website">{{ website }}</a> to view this online. /&gt;
             </div>
         </div>
     </div>
