@@ -65,7 +65,6 @@ export class AppComponent {
   linkedin = "https://in.linkedin.com/in/mohammadanaskhan";
   github = "https://github.com/Anas9598";
   website = "https://anas9598.github.io/portfolio";
-  postScript = `This resume is created using HTML/CSS and deployed as an Angular app on GitHub Pages. Visit ${this.website} to view this page.`
 
 
   courses: IEducation[] = [
@@ -178,9 +177,8 @@ export class AppComponent {
 
   hobbies = [
     "Competitive Programming",
-    "Raspberry Pi",
-    "Bike Riding",
-    "DIY Projects"
+    "DIY Projects",
+    "Traveling & Bike Riding"
   ];
 
   achievements = [
@@ -191,6 +189,10 @@ export class AppComponent {
   ]
 
   constructor(private httpService: AppHttpService) { }
+
+  printResume() {
+    window.print();
+  }
 
   get address(): string {
     return this.addressLine1 + ", " + this.addressLine2;
@@ -208,5 +210,9 @@ export class AppComponent {
     const begin = `${this.monthNames[experience.beginDate?.getMonth()]}, ${experience.beginDate?.getFullYear()}`;
     const end = experience.isCurrent ? "Present" : `${this.monthNames[experience.endDate?.getMonth()]}, ${experience.endDate?.getFullYear()}`;
     return `${begin} - ${end}`;
+  }
+
+  get isMyResume(): boolean {
+    return this.firstName === "Mohd Anas" && this.lastName === "Khan" && this.phoneNumber.indexOf("9598979221") > -1;
   }
 }

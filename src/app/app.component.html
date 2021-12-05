@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="container my-3 py-4 t0-container">
+        <div class="container my-3 py-4 app-template-container">
             <div class="row">
                 <div class="col-10 pr-0">
                     <div class="t0-header">
@@ -83,7 +83,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="mb-1 row">
+                        <!-- <div class="mb-1 row">
                             <div class="col-2">
                                 <i class="fa fa-globe"></i>
                             </div>
@@ -92,7 +92,7 @@
                                     {{ website }}
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="col-12 px-0 t0-section t0-education mt-5">
                         <div class="mt-1 mb-1">
@@ -102,11 +102,10 @@
                         </div>
                         <div class="mt-1 row" *ngFor="let course of courses">
                             <div class="col-12">
-                                <label class="mb-0 t0-section-content">
-                                    <strong>{{ course.name }}</strong>
-                                    {{ "(" + course.major_board + ")" }}
+                                <label class="float-left mb-0 t0-section-content w-auto">
+                                    <strong>{{ course.name + " (" + course.major_board + ")" }}</strong>
                                 </label>
-                                <label class="mb-0 float-right t0-section-content">
+                                <label class="float-right font-weight-bold mb-0 t0-section-content w-auto">
                                     {{ getCourseDuration(course) }}
                                 </label>
                             </div>
@@ -129,11 +128,9 @@
                                     <strong>{{ skill.name }}</strong>
                                 </label>
                             </div>
-                            <div class="col-12">
-                                <p>
-                                    <ngb-progressbar class="t0-progress-bar" [value]="skill.percent" height=".5rem">
-                                    </ngb-progressbar>
-                                </p>
+                            <div class="col-12 mb-2">
+                                <ngb-progressbar class="t0-progress-bar bg-warning" [value]="skill.percent" height=".5rem">
+                                </ngb-progressbar>
                             </div>
                         </div>
                     </div>
@@ -147,7 +144,7 @@
                             <li class="col-12 px-0 t0-section-content">
                                 <i class="fa fa-caret-right"></i>
                                 <label class="mb-0 d-inline">
-                                    <strong>{{ achievement }}</strong>
+                                    {{ achievement }}
                                 </label>
                             </li>
                         </ul>
@@ -159,7 +156,7 @@
                             </label>
                         </div>
                         <div class="mt-1 row t0-section-content">
-                            <span class="border px-3 py-1 mx-2 my-1 t0-hobby form-control-sm"
+                            <span class="border px-2 py-1 mx-2 my-1 t0-hobby form-control-sm"
                                 *ngFor="let hobby of hobbies">
                                 {{ hobby }}
                             </span>
@@ -232,11 +229,16 @@
                     </div>
                 </div>
             </div>
-            <div class="font-italic" *ngIf="postScript">
-               PS: {{postScript}}
-            </div>
             <div class="t0-end">
+            </div>
+            <div *ngIf="isMyResume" class="app-print-only bg-dark mt-2 mx-3 px-3 text-monospace text-sm-center text-white">
+                &lt;PS: Created this resume using HTML/CSS and deployed as an Angular app on GitHub Pages. Visit my
+                github page: <a [href]="website">{{ website }}</a> to view. /&gt;
             </div>
         </div>
     </div>
+    <button class="app-print-none app-print-button shadow border-warning"
+            (click)="printResume()">            
+            <i class="fa fa-print"></i>
+            Print</button>
 </div>

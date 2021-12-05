@@ -129,4 +129,45 @@
     font-family: "ProzaLibre-SemiBoldItalic";
     src: local("ProzaLibre-SemiBoldItalic"), url(./assets/fonts/Proza_Libre/ProzaLibre-SemiBoldItalic.ttf) format("truetype");
 }
-/* FONT Proza Libre Start */
+/* FONT Proza Libre End */
+
+
+/* App specific classes Start */
+.app-print-none {
+    display: block;
+}
+
+.app-print-only {
+    display: none;
+}
+
+.app-template-container {    
+    width: 62em !important;
+    box-shadow: 0px 0px 20px;
+}
+
+.app-print-button {
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    height: 3em;
+    width: 7em;
+    border-radius:1em;
+    -moz-border-radius:1em;
+    -webkit-border-radius:1em;
+}
+
+@media print {
+    .app-template-container {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 0em !important;
+    }
+    .app-print-only {
+        display: block;
+    }
+    .app-print-none {
+        display: none;
+    }
+}
+/* App specific classes End */
