@@ -106,8 +106,8 @@ export class AppComponent {
     }
   ];
 
-  profileSummary = `IT Professional with 6+ years of experience in a fast paced environment meeting the
-  organizational goals and objectives through hard work and mental ability. Able to work on own initiative
+  profileSummary = `IT Professional with years of experience in a fast paced environment meeting the
+  organizational goals and objectives through hard work and smart skills. Able to work on own initiative
   or as part of a team and can deal with development duties competently. Seeking to work in a challenging
   position, that offers responsibilities and opportunities for advancement subsequently ensuring
   organizational and individual growth.`;
