@@ -21,13 +21,13 @@ export interface IEducation {
 
 export interface ISkill {
   name: string;
-  percent: number;
+  percent?: number;
 }
 
 export interface IProject {
   name: string;
   detail: string;
-  roles: string[]
+  roles?: string[]
 }
 
 export interface IExperience {
@@ -55,13 +55,15 @@ export class AppComponent {
 
   firstName = "Mohd Anas";
   lastName = "Khan";
-  jobTitle = "Sr. Software Developer";
-  currentCompany = "iE3Innovations Pvt. Ltd.";
+  jobTitle = "Technical Lead";
+  currentCompany = "iE3 Innovations Pvt. Ltd.";
   phoneNumber = "+91-9598979221";
   // email = "contact.mohdanaskhan@gmail.com";
   email = "samad.27.02.89@gmail.com";
-  addressLine1 = "241, Talkatora Road, Alambagh";
-  addressLine2 = "Lucknow 226005.";
+  // addressLine1 = "241, Talkatora Road, Alambagh";
+  addressLine1 = "Lucknow";
+  // addressLine2 = "Lucknow 226005.";
+  addressLine2 = "";  
   linkedin = "https://in.linkedin.com/in/mohammadanaskhan";
   github = "https://github.com/Anas9598";
   website = "https://anas9598.github.io/portfolio";
@@ -93,16 +95,32 @@ export class AppComponent {
 
   skills: ISkill[] = [
     {
-      name: "Angular 2+ (Ver. 4-10)",
-      percent: 80
+      name: "Angular 2+ (Ver. 4-17)",
+      percent: 89
     },
     {
       name: "C#",
       percent: 75
     },
     {
+      name: "HTML, CSS & Javascript",
+      percent: 85
+    },
+    {
       name: ".NET Core Web API",
-      percent: 73
+      percent: 80
+    },
+    {
+      name: "GIT",
+      percent: 89
+    },
+    {
+      name: "Problem breakdown and solving",
+      percent: 90
+    },
+    {
+      name: "Implementation and optimized algorithm",
+      percent: 90
     }
   ];
 
@@ -119,26 +137,33 @@ export class AppComponent {
         city: "Gurgaon",
         country: "India"
       },
-      jobTitle: "Senior Software Developer",
+      jobTitle: "Technical Lead",
       beginDate: new Date(2017, 7, 1),
       endDate: null,
       isCurrent: true,
-      description: `This is a product-based company that deals in retail products including
-                    Inventory and Point of sale solutions.`,
+      description: `The organization is a product-based company that deals in retail products including
+                    Inventory and Point of sale solutions. I am leading a team of some very skilled developers.`,
       projects: [
         {
           name: "Back Office and POS (Product)",
           detail: `The back office product manages all the inventory and reports related solutions which is
                     mainly used by the store manager/IT support and the POS application is used by the sales
-                    person and customer. Both the apps employs Angular 2+ and .NET Core WebAPI.`,
+                    person and customer. Both the apps employ latest versions on Angular and .NET Core WebAPI.`,
           roles: [
             "Gather and document new requirements.",
-            "Proposing timelines and creating POC where ever required.",
+            "Proposing timelines and creating PoC if required.",
             "Ensuring test-driven development architecture.",
-            "Coding and review.",
+            "Coding and assigning tasks.",
+            "Review and code improvement feedback.",
             "Ensuring quality code and unit testing.",
             "Proposing solutions for fixing issues."
           ]
+        },
+        {
+          name: "Research - AI solutions.",
+          detail: `Research fellow for providing PoC on AI related solutions and improvements. Currently working on audio 
+                    translation and transcription using Open AI's Whisper ASR and using chat completion feature for 
+                    function calling.`
         }
       ]
     },
@@ -176,16 +201,19 @@ export class AppComponent {
   ];
 
   hobbies = [
+    "AI",
+    "GPTs and LLMs",
+    "Traveling & Riding Bikes",
     "Competitive Programming",
-    "DIY Projects",
-    "Traveling & Bike Riding"
+    "DIY Projects"
   ];
 
   achievements = [
     `Microsoft certified in Programming in C# (Exam: 70-483).`,
+    `Appreciated for providing PoC for AI powered smart shopping cart.`,
     `Developed Smart Data Dictionary and Field Extractor and Payment File Generator as a part of
     automation in Infosys.`,
-    `Created Dynamic Entity Search which generates search form in UI dynamically for the entity.`
+    `Created Dynamic entity search app which generates search form dynamically for a given entity.`
   ]
 
   constructor(private httpService: AppHttpService) { }
@@ -195,7 +223,11 @@ export class AppComponent {
   }
 
   get address(): string {
-    return this.addressLine1 + ", " + this.addressLine2;
+    return this.addressLine1 +  (this.addressLine1 && this.addressLine2 ? ", " : "") + this.addressLine2;
+  }
+
+  get isPercentSkills(): boolean {
+    return this.skills.some(s => s.percent);
   }
 
   getCourseDuration(course: IEducation): string {

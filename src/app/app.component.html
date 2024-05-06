@@ -122,17 +122,30 @@
                                 SKILLS
                             </label>
                         </div>
-                        <div class="mt-1 row" *ngFor="let skill of skills">
-                            <div class="col-12">
-                                <label class="mb-0 t0-section-content">
-                                    <strong>{{ skill.name }}</strong>
-                                </label>
+                        <ng-container *ngIf="!isPercentSkills; else barSkills">
+                            <ul class="mt-1 row" *ngFor="let skill of skills">
+                                <li class="col-12 px-0 t0-section-content">
+                                    <i class="fa fa-caret-right"></i>
+                                    <label class="mb-0 d-inline">
+                                        {{ skill.name }}
+                                    </label>
+                                </li>
+                            </ul>
+                        </ng-container>
+                        <ng-template #barSkills>
+                            <div class="mt-1 row" *ngFor="let skill of skills">
+                                <div class="col-12">
+                                    <label class="mb-0 t0-section-content">
+                                        {{ skill.name }}
+                                    </label>
+                                </div>
+                                <div class="col-12 mb-2" *ngIf="skill.percent">
+                                    <ngb-progressbar class="t0-progress-bar" [value]="skill.percent" height=".5rem"
+                                        [striped]="true">
+                                    </ngb-progressbar>
+                                </div>
                             </div>
-                            <div class="col-12 mb-2">
-                                <ngb-progressbar class="t0-progress-bar" [value]="skill.percent" height=".5rem">
-                                </ngb-progressbar>
-                            </div>
-                        </div>
+                        </ng-template>
                     </div>
                     <div class="col-12 px-0 t0-section t0-certification mt-5">
                         <div class="mt-1 mb-1">
@@ -211,11 +224,12 @@
                                 </div>
                                 <div class="col-12">
                                     <ul class="t0-section-content">
-                                        <li *ngFor="let project of experience.projects" class="t0-experience-project">
+                                        <li *ngFor="let project of experience.projects"
+                                            class="t0-experience-project mt-3 border p-2">
                                             <label>{{ project.name }}</label>
                                             <p>{{ project.detail }}</p>
-                                            <label>Roles</label>
-                                            <ul>
+                                            <label *ngIf="project.roles">Roles</label>
+                                            <ul *ngIf="project.roles">
                                                 <li *ngFor="let role of project.roles">
                                                     <i class="fa fa-caret-right"></i>
                                                     {{ role }}
@@ -231,14 +245,15 @@
             </div>
             <div class="t0-end">
             </div>
-            <div *ngIf="isMyResume" class="app-my-postscript app-print-only bg-dark mt-2 mx-3 px-3 text-monospace text-sm-center text-white">
-                &lt;PS: This resume is created using HTML & CSS and deployed as an Angular app on GitHub Pages. Please visit my
-                github page: <a [href]="website">{{ website }}</a> to view this online. /&gt;
+            <div *ngIf="isMyResume"
+                class="app-my-postscript app-print-only bg-dark mt-2 mx-3 px-3 text-monospace text-sm-center text-white">
+                &lt;PS: I created this resume as an Angular app and deployed on GitHub Pages. Please
+                visit this
+                github page: <a [href]="website">{{ website }}</a> to view this resume online. /&gt;
             </div>
         </div>
     </div>
-    <button class="app-print-none app-print-button shadow border-warning"
-            (click)="printResume()">            
-            <i class="fa fa-print"></i>
-            Print</button>
+    <button class="app-print-none app-print-button shadow border-warning" (click)="printResume()">
+        <i class="fa fa-print"></i>
+        Print</button>
 </div>
