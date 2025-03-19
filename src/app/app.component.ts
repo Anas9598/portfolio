@@ -95,40 +95,37 @@ export class AppComponent {
 
   skills: ISkill[] = [
     {
-      name: "Angular 2+ (Ver. 4-17)",
-      percent: 89
+      name: "Angular 2 (Upto Ver. 19)",
+      percent: 85
     },
     {
-      name: "C#",
+      name: "Azure AI Services",
+      percent: 78
+    },
+    {
+      name: ".NET Core Web API using C#",
       percent: 75
     },
     {
       name: "HTML, CSS & Javascript",
-      percent: 85
-    },
-    {
-      name: ".NET Core Web API",
       percent: 80
     },
     {
-      name: "GIT",
-      percent: 89
-    },
-    {
-      name: "Problem breakdown and solving",
+      name: "Problem solving and breakdown",
       percent: 90
     },
     {
-      name: "Implementation and optimized algorithm",
-      percent: 90
+      name: "Implementation and optimizing algorithm",
+      percent: 85
     }
   ];
 
-  profileSummary = `IT Professional with years of experience in a fast paced environment meeting the
-  organizational goals and objectives through hard work and smart skills. Able to work on own initiative
-  or as part of a team and can deal with development duties competently. Seeking to work in a challenging
-  position, that offers responsibilities and opportunities for advancement subsequently ensuring
-  organizational and individual growth.`;
+  profileSummary = `IT Professional with years of experience in a fast paced environment meeting
+                     the organizational goals and objectives through hard work and smart skills. I
+                      am able to work on own initiative or as a part of a team and can deal with
+                       development duties competently. I am seeking to work in a challenging
+                        position, that offers responsibilities and opportunities for advancement, 
+                        subsequently ensuring organizational and individual growth.`;
 
   experiences: IExperience[] = [
     {
@@ -142,7 +139,9 @@ export class AppComponent {
       endDate: null,
       isCurrent: true,
       description: `The organization is a product-based company that deals in retail products including
-                    Inventory and Point of sale solutions. I am leading a team of some very skilled developers.`,
+                    Inventory and Point of sale solutions. My role here is to provide 
+                    solutions for Backoffice and POS apps while keeping the performance in 
+                    check. Also, I provide research support on AI solutions for these apps.`,
       projects: [
         {
           name: "Back Office and POS (Product)",
@@ -161,9 +160,11 @@ export class AppComponent {
         },
         {
           name: "Research - AI solutions.",
-          detail: `Research fellow for providing PoC on AI related solutions and improvements. Currently working on audio 
-                    translation and transcription using Open AI's Whisper ASR and using chat completion feature for 
-                    function calling.`
+          detail: `Research fellow for providing PoC on AI related solutions and 
+                    improvements. Latest development includes a PoC on audio 
+                    translation and transcription using OpenAI's Whisper ASR and calling 
+                    function using chat completion feature for our POS app. We have 
+                    recently moved to Azure AI Services for AI solutions.`
         }
       ]
     },
@@ -178,7 +179,7 @@ export class AppComponent {
       endDate: new Date(2017, 1, 1),
       isCurrent: false,
       description: `This is a leading MNC in India that deals in a variety of services and product solutions.
-                    I was trained at state-of-the-art Infosys, Mysore training center with 75% result.`,
+                    I was trained at their state-of-the-art Infosys, Mysore training center with 75% result.`,
       projects: [
         {
           name: "Healthcare Insurance Project (affiliated to MetLife, U.S.)",
@@ -201,19 +202,17 @@ export class AppComponent {
   ];
 
   hobbies = [
-    "AI",
-    "GPTs and LLMs",
-    "Traveling & Riding Bikes",
+    "Keeping up with latest trends in Generative AI",
     "Competitive Programming",
     "DIY Projects"
   ];
 
   achievements = [
-    `Microsoft certified in Programming in C# (Exam: 70-483).`,
-    `Appreciated for providing PoC for AI powered smart shopping cart.`,
+    `Microsoft Certified Professional for <b> Programming in C# </b> (Exam: 70-483).`,
+    `Appreciated for providing PoC for AI powered speech enabled smart shopping cart.`,
+    `Appreciated for creating Dynamic entity search solution which generates search form dynamically for a given entity.`,
     `Developed Smart Data Dictionary and Field Extractor and Payment File Generator as a part of
-    automation in Infosys.`,
-    `Created Dynamic entity search app which generates search form dynamically for a given entity.`
+    automation in Infosys.`
   ]
 
   constructor(private httpService: AppHttpService) { }

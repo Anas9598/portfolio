@@ -2,7 +2,7 @@
     <div class="row">
         <div class="container my-3 py-4 app-template-container">
             <div class="row">
-                <div class="col-10 pr-0">
+                <div [ngClass]="isMyResume ? 'col-9 pr-0' : 'col-12'">
                     <div class="t0-header">
                         <div>
                             <label class="t0-header-name">
@@ -17,13 +17,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-2 pl-0">
+                <div *ngIf="isMyResume" class="col-3 pl-0">
                     <div class="t0-header-certificate-1 border-bottom-0">
-                        <img src="assets/images/MS_Cert_Professional_logo_Blk_rgb.png">
+                        <img src="assets/images/ASP_NET_Core_Logo.jpg" style="height: 85%;"/>
+                        <img src="assets/images/MS_Cert_Professional_logo_Blk_rgb.png" style="padding-top: 5px;">
                     </div>
                     <div class="t0-header-certificate-2 border-top-0">
                         <img src="assets/images/Angular_full_color_logo.svg">
-                        <!-- <img src="../assets/images/NET_Core_Logo.svg.png"> -->
+                        <img src="assets/images/Az_OpenAI_Logo.png" style="width: 52%;"/>
                     </div>
                 </div>
                 <div class="t0-section-left p-3 ml-3">
@@ -156,8 +157,7 @@
                         <ul class="mt-1 row" *ngFor="let achievement of achievements">
                             <li class="col-12 px-0 t0-section-content">
                                 <i class="fa fa-caret-right"></i>
-                                <label class="mb-0 d-inline">
-                                    {{ achievement }}
+                                <label class="mb-0 d-inline" [innerHtml]="achievement">
                                 </label>
                             </li>
                         </ul>
@@ -247,9 +247,9 @@
             </div>
             <div *ngIf="isMyResume"
                 class="app-my-postscript app-print-only bg-dark mt-2 mx-3 px-3 text-monospace text-sm-center text-white">
-                &lt;PS: I created this resume as an Angular app and deployed on GitHub Pages. Please
-                visit this
-                github page: <a [href]="website">{{ website }}</a> to view this resume online. /&gt;
+                &lt;PS: This resume is created as an Angular app and deployed on GitHub Pages. To view this resume 
+                online, checkout my github page <a href="https://anas9598.github.io/portfolio">https://anas9598.github.io/portfolio</a>. Find the repository at 
+                <a href="https://github.com/Anas9598/portfolio">https://github.com/Anas9598/portfolio</a> /&gt; 
             </div>
         </div>
     </div>
